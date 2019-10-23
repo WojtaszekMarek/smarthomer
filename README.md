@@ -2,6 +2,8 @@
 # Smarthomer
 Konfiguracja i dokumentacja mojego Smart Domu 
 
+![topologia](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/Smart%20Home%20-%20Topologia.png)
+
 ## Server
 * Raspberry Pi 3B z dyskiem mSATA i modułem ZigbeeUSB CC2531   [Raspbian Stretch]
 
@@ -23,7 +25,8 @@ Konfiguracja i dokumentacja mojego Smart Domu
 * Sonoff Mini
 * Sonoff SV
 
-## Sensors
+## WiFi
+* Ubiquity UAP AC Lite
 
 ## Inne połączone urządzenia
 * Sonoff RF Bridge Most 433 Sterownik RF
@@ -49,3 +52,7 @@ Konfiguracja i dokumentacja mojego Smart Domu
 
 
 ## Screenshots
+
+![YouTube](https://www.youtube.com/yts/img/yt_1200-vflhSIVnY.png)
+
+Zapraszam też do odwiedzenia mojego [Kanału](https://www.youtube.com/channel/UCQB-H0u-UedF7Zf7cI5e0xA?view_as=subscriber) na YouTube gdzie pokazuje jak wygląda mój SmartDom od podszewki

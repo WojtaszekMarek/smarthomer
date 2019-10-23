@@ -6,34 +6,41 @@ Konfiguracja i dokumentacja mojego Smart Domu
 * Raspberry Pi 3 [Raspbian Stretch]
 
 ## ZigBee Devices
-Xiaomi Mi Smart Home Gateway 2
-Xiaomi Temperature/Humidity
-Xiaomi Motion/Illumination Sensors
-Xiaomi Window/Door Sensors
+* Xiaomi Mi Smart Home Gateway 2
+* Xiaomi AquaraTemperature/Humidity
+* Xiaomi Aquara Motion Illumination Sensors
+* Xiaomi Window/Door Sensors
+* Xiaomi Mi Smart Power Plug 
+* Ikea Tradfri Zigbee Range Extender
+* Ikea Wireless motion sensor
 
 
 ## Światła
-Sonoff Touch
+* Sonoff Touch
 
-## Switches
-Sonoff Basic Switches 
-Sonoff Mini
-Sonoff SV
+## Włączniki
+* Sonoff Basic
+* Sonoff Mini
+* Sonoff SV
 
 ## Sensors
 
 ## Other Integrated Devices
+* Sonoff RF Bridge Most 433 Sterownik RF
+* Xiaomi Universal IR Remote Controller
+* Xiaomi Mi Motion lamp
 
 
 ## Home Assistant Custom Components
-Airly
-Zigbee Map
+* Airly
+* Zigbee Map
 
 ## Custom Panels
-Zigbee Map
+* Zigbee Map
 
 ## Lovelace Custom Cards
-
+* mini-graph-card-bundle.js
+* thermostat-card.js
 
 ## Python Scripts
 

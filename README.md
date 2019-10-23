@@ -3,7 +3,7 @@
 Konfiguracja i dokumentacja mojego Smart Domu 
 
 ## Server
-* Raspberry Pi 3 [Raspbian Stretch]
+* Raspberry Pi 3B z dyskiem mSATA i modułem ZigbeeUSB CC2531   [Raspbian Stretch]
 
 ## ZigBee Devices
 * Xiaomi Mi Smart Home Gateway 2
@@ -25,10 +25,13 @@ Konfiguracja i dokumentacja mojego Smart Domu
 
 ## Sensors
 
-## Other Integrated Devices
+## Inne połączone urządzenia
 * Sonoff RF Bridge Most 433 Sterownik RF
 * Xiaomi Universal IR Remote Controller
 * Xiaomi Mi Motion lamp
+* Google Home
+* Samsung Smart TV 
+* Wetek Core
 
 
 ## Home Assistant Custom Components

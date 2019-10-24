@@ -75,4 +75,4 @@ Konfiguracja i dokumentacja mojego Smart Domu
 ## Linki
 
 <img src="https://cdn.dribbble.com/users/1077130/screenshots/3524752/free-youtube-subscribe-button-png-download-by-alfredocreates.jpg" width="100">
-Zapraszam też do odwiedzenia mojego [Kanału](https://www.youtube.com/channel/UCQB-H0u-UedF7Zf7cI5e0xA?view_as=subscriber) na YouTube gdzie pokazuje jak wygląda mój SmartDom od podszewki
+Zapraszam też do odwiedzenia mojego <a href="https://www.youtube.com/channel/UCQB-H0u-UedF7Zf7cI5e0xA?view_as=subscriber">kanału</a> na YouTube gdzie pokazuje jak wygląda mój SmartDom od podszewki

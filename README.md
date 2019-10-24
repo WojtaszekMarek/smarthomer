@@ -53,12 +53,19 @@ Konfiguracja i dokumentacja mojego Smart Domu
 
 ## Screenshots
 
-![Ekran startowy](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/Start.PNG)
-![Głowny ekran tabletu](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/Tablet.PNG)
-![Security](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/Security.PNG)
+### Ekran startowy
+![Ekran startowy](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/Start.PNG "Ekran startowy")
+### Główny ekran panelu na ścianie
+![Głowny ekran tabletu](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/Tablet.PNG "Głowny ekran tabletu")
+### Bezpieczeństwo
+![Security](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/security.PNG)
+### Ogrzewanie
 ![Ogrzewanie](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/heating.PNG)
+### Salon
 ![Salon](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/Salon.PNG)
+### Łączność
 ![Łączność](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/łączność.PNG)
+### Mapa Zigbee
 ![Mapa Zigbee](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/Zigbee_map.PNG)
 
 
@@ -67,6 +74,6 @@ Konfiguracja i dokumentacja mojego Smart Domu
 
 ## Linki
 
-![YouTube](https://www.youtube.com/yts/img/yt_1200-vflhSIVnY.png)
+<img src="https://cdn.dribbble.com/users/1077130/screenshots/3524752/free-youtube-subscribe-button-png-download-by-alfredocreates.jpg" width="100">
 
 Zapraszam też do odwiedzenia mojego [Kanału](https://www.youtube.com/channel/UCQB-H0u-UedF7Zf7cI5e0xA?view_as=subscriber) na YouTube gdzie pokazuje jak wygląda mój SmartDom od podszewki

@@ -53,6 +53,20 @@ Konfiguracja i dokumentacja mojego Smart Domu
 
 ## Screenshots
 
+![Ekran startowy](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/Start.PNG)
+![Głowny ekran tabletu](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/Tablet.PNG)
+![Security](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/Security.PNG)
+![Ogrzewanie](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/heating.PNG)
+![Salon](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/Salon.PNG)
+![Łączność](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/łączność.PNG)
+![Mapa Zigbee](https://github.com/WojtaszekMarek/smarthomer/blob/master/images/Zigbee_map.PNG)
+
+
+
+
+
+## Linki
+
 ![YouTube](https://www.youtube.com/yts/img/yt_1200-vflhSIVnY.png)
 
 Zapraszam też do odwiedzenia mojego [Kanału](https://www.youtube.com/channel/UCQB-H0u-UedF7Zf7cI5e0xA?view_as=subscriber) na YouTube gdzie pokazuje jak wygląda mój SmartDom od podszewki

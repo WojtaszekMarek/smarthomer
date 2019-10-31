@@ -10,7 +10,6 @@ Konfiguracja i dokumentacja mojego Smart Domu
 ## ZigBee Devices
 * Xiaomi Mi Smart Home Gateway 2 - (Nie używany jako Hub)
 * <a href="https://allegro.pl/oferta/aqara-czujnik-temperatury-i-wilgotnosci-xiaomi-8594571727?reco_id=e5721f11-fbb3-11e9-ba03-ecf4bbc5c918&sid=0e7a5475e04eefd78184d559df6fb9f87c889ad5ac94196dac75ac99722370c3&bi_s=archiwum_allegro&bi_c=Product&bi_m=reco&">Xiaomi Aqara Temperature/Humidity</a>
-* <a href="https://allegro.pl/oferta/czujnik-ruchu-i-swiatla-body-sensor-aqara-xiaomi-8588006922">Xiaomi Aqara Motion Illumination Sensors</a>
 * <a href="https://allegro.pl/oferta/xiaomi-smart-home-door-windows-sensor-intelligent-8492731409">Xiaomi Window/Door Sensors</a>
 * <a href="https://allegro.pl/oferta/xiaomi-mi-smart-home-socket-zigbee-gniazdko-7137683414">Xiaomi Mi Smart Home Socket</a>
 * <a href="https://allegro.pl/oferta/ikea-tradfri-wzmacniacz-sygnalu-8259961583">Ikea Tradfri Zigbee Range Extender</a>
@@ -31,10 +30,11 @@ Konfiguracja i dokumentacja mojego Smart Domu
 ## Inne połączone urządzenia
 * <a href="https://allegro.pl/oferta/sonoff-rf-bridge-most-radiowy-wifi-rf-433-mhz-7937815445?reco_id=b5e4e521-fbb5-11e9-bf7d-b026284c3910&sid=0e7a5475e04eefd78184d559df6fb9f87c889ad5ac94196dac75ac99722370c3&bi_s=archiwum_allegro&bi_c=Product&bi_m=reco&">Sonoff RF Bridge Most 433 Sterownik RF</a>
 * Xiaomi Universal IR Remote Controller
-* <a hre"https://allegro.pl/oferta/xiaomi-lampka-nocna-led-czujniki-ruchu-i-swiatla-8085644943">Xiaomi Mi Motion lamp</a>
+* <a href="https://allegro.pl/oferta/xiaomi-lampka-nocna-led-czujniki-ruchu-i-swiatla-8085644943">Xiaomi Mi Motion lamp</a>
 * <a href="https://allegro.pl/oferta/google-home-inteligentny-glosnik-bialy-asystent-8244414691">Google Home</a>
 * Samsung Smart TV 
 * <a href="https://www.dobreprogramy.pl/wojtekadams/WeTek-Core-Android-TV-ze-Slowenii,69454.html">Wetek Core</a>
+* <a href="https://allegro.pl/oferta/czujnik-ruchu-i-swiatla-body-sensor-aqara-xiaomi-8588006922">Xiaomi Aqara Motion Illumination Sensors</a>
 
 ## Mocowania tabletów
 * <a href="https://centrumelektroniki.pl/Uchwyt_reklamowy_do_tabletu_Maclean_MC610_metalowa_obudowa_z_zamkiem_Tab_1_2_3_101_mocowanie_nascienne_,p92615.html">Maclean MC-610</a>

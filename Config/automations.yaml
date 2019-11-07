@@ -1,0 +1,128 @@
+- id: '1569152265232'
+  alias: Ogrzewanie - w dzień
+  trigger:
+  - at: 05:00:00
+    platform: time
+  - at: '15:00:00'
+    platform: time
+  - entity_id: group.fajni_ludzie
+    platform: state
+    to: home
+  condition: []
+  action:
+  - data:
+      entity_id: climate.termostat_u_mai
+      temperature: '21'
+    service: climate.set_temperature
+  - data:
+      entity_id: group.termostaty
+      preset_mode: none
+    service: climate.set_preset_mode
+  - data:
+      entity_id: climate.termostat_na_dole
+      temperature: '22'
+    service: climate.set_temperature
+  - data:
+      entity_id: switch.0x00158d0003929ad1_switch
+    service: switch.turn_on
+- id: '1569155541770'
+  alias: Ogrzewanie - w nocy
+  trigger:
+  - at: '21:00:00'
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: climate.termostat_u_mai
+      temperature: '20'
+    service: climate.set_temperature
+  - data:
+      entity_id: climate.termostat_na_dole
+      temperature: '21'
+    service: climate.set_temperature
+  - data:
+      entity_id: switch.0x00158d0003929ad1_switch
+    service: switch.turn_off
+
+- id: '1569310165562'
+  alias: Ogrzewanie góra - wyłącz jeśli okna zostały otwarte
+  trigger:
+  - entity_id: binary_sensor.door_window_sensor_158d00027b5f6a
+    platform: state
+    to: 'on'
+  - entity_id: binary_sensor.door_window_sensor_158d00028a18c7
+    platform: state
+    to: 'on'
+  - entity_id: binary_sensor.door_window_sensor_158d00028a1a8a
+    platform: state
+    to: 'on'
+  - entity_id: binary_sensor.door_window_sensor_158d00028b5c72
+    platform: state
+    to: 'on'
+  action:
+  - data:
+      entity_id: climate.termostat_u_mai
+      preset_mode: away
+    entity_id: switch.ogrzewanie_gora
+    service: climate.set_preset_mode
+  - data:
+      away_temp: '16'
+      entity_id: climate.termostat_u_mai
+    service: climate.set_temperature
+- id: '1569310165561'
+  alias: Ogrzewanie góra - włącz jeśli okna zostały zamknięte
+  trigger:
+  - entity_id: binary_sensor.door_window_sensor_158d00027b5f6a
+    platform: state
+    to: 'off'
+  - entity_id: binary_sensor.door_window_sensor_158d00028a18c7
+    platform: state
+    to: 'off'
+  - entity_id: binary_sensor.door_window_sensor_158d00028a1a8a
+    platform: state
+    to: 'off'
+  - entity_id: binary_sensor.door_window_sensor_158d00028b5c72
+    platform: state
+    to: 'off'
+  action:
+  - data:
+      entity_id: group.termostaty
+      preset_mode: none
+    entity_id: switch.ogrzewanie_gora
+    service: climate.set_preset_mode
+- id: '1569569592907'
+  alias: Ogrzewanie - Poza domem
+  trigger:
+  - entity_id: group.fajni_ludzie
+    platform: state
+    to: not_home
+  condition: []
+  action:
+  - data:
+      entity_id: group.termostaty
+      preset_mode: away
+    service: climate.set_preset_mode
+- id: '1570619319404'
+  alias: Ogrzewanie - Powiadom o niskiej temperaturze
+  trigger:
+  - below: '19'
+    entity_id: sensor.0x00158d0001fd5adf_temperature
+    platform: numeric_state
+  - below: '19'
+    entity_id: sensor.brama_garazowa_ds18b20_temperature
+    platform: numeric_state
+  - below: '19'
+    entity_id: sensor.0x00158d0002461b4f_temperature
+    platform: numeric_state
+  - below: '19'
+    entity_id: sensor.0x00158d00023ef9b3_temperature
+    platform: numeric_state
+  - below: '19'
+    entity_id: sensor.0x00158d00023ef9ed_temperature
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      message: Temperatura w domu spadła poniżej 19'C
+    service: notify.notify
+

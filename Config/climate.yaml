@@ -1,0 +1,71 @@
+- platform: generic_thermostat
+  name: Termostat na dole
+  heater: switch.ogrzewanie_dol
+  target_sensor: sensor.0x00158d0001fd5adf_temperature
+  min_temp: 16
+  max_temp: 24
+  ac_mode: false
+  target_temp: 22
+  cold_tolerance: 0.3
+  hot_tolerance: 0
+  min_cycle_duration:
+    seconds: 5
+  keep_alive:
+    minutes: 3
+  initial_hvac_mode: "heat"
+  away_temp: 20
+  precision: 0.1
+
+- platform: generic_thermostat
+  name: Termostat u Mai
+  heater: switch.ogrzewanie_gora_2
+  target_sensor: sensor.0x00158d00023ef9ed_temperature
+  min_temp: 16
+  max_temp: 24
+  ac_mode: false
+  target_temp: 21
+  cold_tolerance: 0.3
+  hot_tolerance: 0
+  min_cycle_duration:
+    seconds: 5
+  keep_alive:
+    minutes: 3
+  initial_hvac_mode: "heat"
+  away_temp: 19
+  precision: 0.1
+
+- platform: generic_thermostat
+  name: Termostat w Sypialni
+  heater: switch.ogrzewanie_gora
+  target_sensor: sensor.0x00158d00023ef9b3_temperature
+  min_temp: 16
+  max_temp: 24
+  ac_mode: false
+  target_temp: 22
+  cold_tolerance: 0.3
+  hot_tolerance: 0
+  min_cycle_duration:
+    seconds: 5
+  keep_alive:
+    minutes: 3
+  initial_hvac_mode: "off"
+  away_temp: 18
+  precision: 0.1
+
+- platform: generic_thermostat
+  name: Termostat u Laury
+  heater: switch.ogrzewanie_gora
+  target_sensor: sensor.0x00158d0002461b4f_temperature
+  min_temp: 16
+  max_temp: 24
+  ac_mode: false
+  target_temp: 22
+  cold_tolerance: 0.3
+  hot_tolerance: 0
+  min_cycle_duration:
+    seconds: 5
+  keep_alive:
+    minutes: 3
+  initial_hvac_mode: "off"
+  away_temp: 18
+  precision: 0.1

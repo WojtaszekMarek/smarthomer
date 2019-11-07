@@ -1,0 +1,5 @@
+termostaty:
+    name: Termostaty
+    entities:
+      - climate.termostat_u_mai
+      - climate.termostat_na_dole

@@ -1,0 +1,32 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+climate: !include climate.yaml
+remote: !include remote.yaml
+
+webhook:
+zigbee2mqtt_networkmap:
+   #topic: your topic (optional, default zigbee2mqtt)
+panel_iframe:
+   networkmap:
+     title: 'Zigbee Map'
+     url: '/local/community/zigbee2mqtt_networkmap/map.html'
+     icon: 'mdi:graphql'
+
+frontend:
+  themes: !include themes.yaml
+
+homeassistant:
+  customize: !include customize.yaml

@@ -38,6 +38,7 @@ Konfiguracja i dokumentacja mojego Smart Domu
 
 ## Mocowania tabletów
 * <a href="https://centrumelektroniki.pl/Uchwyt_reklamowy_do_tabletu_Maclean_MC610_metalowa_obudowa_z_zamkiem_Tab_1_2_3_101_mocowanie_nascienne_,p92615.html">Maclean MC-610</a>
+* <a href="https://www.aliexpress.com/item/Wall-Mount-Tablet-Magnetic-Stand-Mobile-Phone-Holder-Convenience-to-pick-and-place-Support-All-Tablets/32827470721.html?spm=a2g0s.9042311.0.0.3a614c4d0R54PG"><Magnes/a>
 
 ## Home Assistant Custom Components
 * <a href="https://github.com/bieniu/ha-airly">Airly</a>

@@ -1,0 +1,802 @@
+resources:
+  - type: module
+    url: /local/custom_ui/mini-graph-card-bundle.js
+  - type: module
+    url: /local/custom_ui/thermostat-card.js
+title: Dom
+views:
+  - badges: []
+    cards:
+      - entities:
+          - entity: group.all_lights
+          - entity: group.all_switches
+        show_header_toggle: false
+        title: Podsumowanie
+        type: entities
+      - entities:
+          - entity: light.hall
+          - entity: binary_sensor.0x00158d0002b5d6a7_occupancy
+          - entity: sensor.0x00158d0002b5d6a7_illuminance
+          - entity: binary_sensor.0x00158d000200d3b1_contact
+        show_header_toggle: true
+        title: Hall
+        type: entities
+      - entities:
+          - entity: sensor.0x000d6ffffe78aa10_linkquality
+          - entity: sensor.0x000d6ffffe78ad0a_linkquality
+        show_header_toggle: true
+        title: Klatka schodowa
+        type: entities
+      - entities:
+          - entity: light.jadalnia_kinkiet
+          - entity: light.jadalnia_lampa
+          - entity: light.kuchnia_lampa_2
+          - entity: light.kuchnia_led_2
+          - entity: binary_sensor.0x00158d0001d54c2f_occupancy
+        show_header_toggle: true
+        title: Kuchnia
+        type: entities
+      - entities:
+          - entity: sensor.0x00158d0002b93fdc_illuminance
+          - entity: binary_sensor.0x00158d0002b93fdc_occupancy
+          - entity: light.garaz_lampy
+          - entity: sensor.brama_garazowa_ds18b20_temperature
+          - entity: switch.brama_garazowa
+          - entity: binary_sensor.brama_garazowa_stan
+        show_header_toggle: true
+        title: Garaż
+        type: entities
+      - entities:
+          - entity: sensor.0x00158d0002461b4f_temperature
+          - entity: sensor.0x00158d0002461b4f_humidity
+          - entity: binary_sensor.0x00158d00028a18c7_contact
+        show_header_toggle: true
+        title: Pokój Laury
+        type: entities
+      - entities:
+          - entity: sensor.0x00158d00023ef9ed_temperature
+          - entity: sensor.0x00158d00023ef9ed_humidity
+          - entity: binary_sensor.0x00158d00027b5f6a_contact
+        show_header_toggle: true
+        title: Pokój Mai
+        type: entities
+      - entities:
+          - entity: switch.0x00158d0003929ad1_switch
+          - entity: switch.ogrzewanie_gora_2
+          - entity: switch.ogrzewanie_dol
+          - entity: light.pomieszczenie_gospodarcze_lampa
+          - entity: binary_sensor.ruch_w_pomieszczeniu_gospodarczym
+        show_header_toggle: true
+        title: Pomieszczenie techniczne
+        type: entities
+      - entities:
+          - entity: switch.0x00158d00039c00a4_switch
+          - entity: light.salon_lampy
+          - entity: light.salon_kinkiet
+          - entity: light.salon_led
+          - entity: binary_sensor.0x00158d0002b84b1d_occupancy
+          - entity: sensor.0x00158d0002b84b1d_illuminance
+          - entity: sensor.0x00158d0001fd5adf_temperature
+          - entity: sensor.0x00158d0001fd5adf_humidity
+          - entity: binary_sensor.0x00158d00028a1a8a_contact
+        show_header_toggle: true
+        title: Salon
+        type: entities
+      - entities:
+          - entity: sensor.0x00158d00023ef9b3_temperature
+          - entity: sensor.0x00158d00023ef9b3_humidity
+          - entity: binary_sensor.0x00158d00028b5c72_contact
+          - entity: light.garderoba_lampa_1
+          - entity: light.garderoba_lampa_2
+        show_header_toggle: true
+        title: Sypialnia
+        type: entities
+      - entities:
+          - entity: sensor.0x00158d0002395c5e_temperature
+          - entity: sensor.0x00158d0002395c5e_humidity
+        show_header_toggle: true
+        title: Poddasze
+        type: entities
+      - entities:
+          - entity: light.sonoff_3ch_toaleta
+          - entity: light.sonoff_3ch_toaleta2
+          - entity: light.sonoff_3ch_toaleta3
+          - entity: binary_sensor.0x14b457fffe7b8d9c_occupancy
+        title: Toaleta
+        type: entities
+      - entities:
+          - entity: light.sonoff_ogrodek_lampa
+          - entity: light.sonoff_taras_lampy
+        title: Na zewnątrz
+        type: entities
+      - type: entities
+        entities:
+          - entity: light.sonoff2_lazienka_2
+          - entity: light.sonoff3_lazienka_3
+          - entity: light.sonoff_lazienka_1
+          - entity: binary_sensor.0x00158d0003f41359_occupancy
+        title: Łazienka
+    icon: 'mdi:home'
+    path: default_view
+    title: Home
+  - icon: 'mdi:tablet'
+    path: tablet
+    title: Tablet
+    panel: false
+    badges: []
+    cards:
+      - entity: weather.dom
+        type: weather-forecast
+      - entities:
+          - entity: group.all_lights
+          - entity: group.all_switches
+          - entity: binary_sensor.window_group
+          - entity: binary_sensor.door_group
+          - entity: binary_sensor.motion_group
+        show_header_toggle: false
+        title: Podsumowanie
+        type: entities
+      - cards:
+          - color_thresholds:
+              - color: '#e74c3c'
+                value: 24
+              - color: '#1db954'
+                value: 19
+              - color: '#3498db'
+                value: 0
+            entities:
+              - sensor.0x00158d0001fd5adf_temperature
+            font_size: 70
+            height: 65
+            hours_to_show: 72
+            line_width: 2
+            points_per_hour: 1
+            show:
+              fill: true
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+      - entity: sensor.airly_level
+        max: 100
+        min: 0
+        name: Zanieczyszczenie powietrza
+        severity:
+          green: 1
+          red: 70
+          yellow: 50
+        theme: default
+        type: gauge
+      - cards:
+          - color_thresholds:
+              - color: '#e74c3c'
+                value: 24
+              - color: '#1db954'
+                value: 19
+              - color: '#3498db'
+                value: 0
+            entities:
+              - sensor.0x00158d0002461b4f_temperature
+            font_size: 70
+            height: 65
+            hours_to_show: 72
+            line_width: 2
+            points_per_hour: 1
+            show:
+              fill: true
+            type: 'custom:mini-graph-card'
+          - color_thresholds:
+              - color: '#e74c3c'
+                value: 24
+              - color: '#1db954'
+                value: 19
+              - color: '#3498db'
+                value: 0
+            entities:
+              - sensor.0x00158d00023ef9ed_temperature
+            font_size: 70
+            height: 65
+            hours_to_show: 72
+            line_width: 2
+            points_per_hour: 1
+            show:
+              color_thresholds:
+                - color: '#e74c3c'
+                  value: 12
+                - color: '#1db954'
+                  value: 22
+                - color: '#3498db'
+                  value: 0
+              fill: true
+            type: 'custom:mini-graph-card'
+          - color_thresholds:
+              - color: '#e74c3c'
+                value: 24
+              - color: '#1db954'
+                value: 19
+              - color: '#3498db'
+                value: 0
+            entities:
+              - sensor.0x00158d00023ef9b3_temperature
+            font_size: 70
+            height: 65
+            hours_to_show: 72
+            line_width: 2
+            points_per_hour: 1
+            show:
+              fill: true
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+      - entity: climate.termostat_na_dole
+        type: thermostat
+      - entities:
+          - entity: sensor.airly_quality
+          - entity: sensor.airly_description
+        type: entities
+      - entities:
+          - entity: switch.ogrzewanie_gora_2
+          - entity: switch.ogrzewanie_dol
+        show_icon: true
+        show_name: true
+        show_state: false
+        type: glance
+      - entity: climate.termostat_u_mai
+        type: thermostat
+      - entities:
+          - entity: person.marek
+            image: /local/images/Marek.jpg
+            type: picture-entity
+          - entity: person.izabela
+            image: /local/images/Izabela.jpg
+            type: picture-entity
+        show_name: false
+        type: glance
+  - badges: []
+    cards:
+      - entity: alarm_control_panel.home_alarm
+        name: Alarm
+        states:
+          - arm_home
+          - arm_away
+        type: alarm-panel
+      - entities:
+          - entity: binary_sensor.0x00158d000200d3b1_contact
+          - entity: binary_sensor.0x00158d00028a1a8a_contact
+          - entity: binary_sensor.brama_garazowa_stan
+        show_header_toggle: false
+        title: Drzwi
+        type: entities
+      - entities:
+          - entity: binary_sensor.0x00158d00028a1a8a_contact
+          - entity: binary_sensor.0x00158d00027b5f6a_contact
+          - entity: binary_sensor.0x00158d00028a18c7_contact
+          - entity: binary_sensor.0x00158d00028b5c72_contact
+        show_header_toggle: false
+        title: Okna
+        type: entities
+      - entities:
+          - entity: binary_sensor.0x00158d0002b5d6a7_occupancy
+          - entity: binary_sensor.0x00158d0002b84b1d_occupancy
+          - entity: binary_sensor.0x00158d0001d54c2f_occupancy
+          - entity: binary_sensor.0x14b457fffe7b8d9c_occupancy
+          - entity: binary_sensor.0x00158d0002b93fdc_occupancy
+          - entity: binary_sensor.ruch_w_pomieszczeniu_gospodarczym
+          - entity: binary_sensor.0x00158d0003f43145_occupancy
+          - entity: binary_sensor.0x00158d0003f41359_occupancy
+        show_header_toggle: false
+        title: Czujniki ruchu
+        type: entities
+    icon: 'mdi:security'
+    panel: false
+    path: bezpieczenstwo
+    title: Bezpieczeństwo
+  - badges: []
+    cards:
+      - entity: climate.termostat_na_dole
+        type: thermostat
+      - entities:
+          - switch.ogrzewanie_dol
+        hours_to_show: 48
+        type: history-graph
+      - cards:
+          - color_thresholds:
+              - color: '#e74c3c'
+                value: 28
+              - color: '#1db954'
+                value: 15
+              - color: '#3498db'
+                value: 0
+            entities:
+              - sensor.0x00158d0001fd5adf_temperature
+            font_size: 70
+            height: 65
+            hours_to_show: 48
+            line_width: 2
+            points_per_hour: 1
+            show:
+              fill: true
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+        width: 256
+      - cards:
+          - color_thresholds:
+              - color: '#e74c3c'
+                value: 28
+              - color: '#1db954'
+                value: 15
+              - color: '#3498db'
+                value: 0
+            entities:
+              - sensor.0x00158d00023ef9ed_temperature
+            font_size: 70
+            height: 65
+            hours_to_show: 48
+            line_width: 2
+            points_per_hour: 1
+            show:
+              fill: true
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+        width: 256
+      - entity: climate.termostat_u_mai
+        type: thermostat
+      - entities:
+          - switch.ogrzewanie_gora_2
+        hours_to_show: 48
+        type: history-graph
+      - cards:
+          - color_thresholds:
+              - color: '#e74c3c'
+                value: 28
+              - color: '#1db954'
+                value: 15
+              - color: '#3498db'
+                value: 0
+            entities:
+              - sensor.0x00158d00023ef9b3_temperature
+            font_size: 70
+            height: 65
+            hours_to_show: 48
+            line_width: 2
+            points_per_hour: 1
+            show:
+              fill: true
+            type: 'custom:mini-graph-card'
+          - color_thresholds:
+              - color: '#e74c3c'
+                value: 28
+              - color: '#1db954'
+                value: 15
+              - color: '#3498db'
+                value: 0
+            entities:
+              - sensor.0x00158d0002461b4f_temperature
+            font_size: 70
+            height: 65
+            hours_to_show: 48
+            line_width: 2
+            points_per_hour: 1
+            show:
+              fill: true
+            type: 'custom:mini-graph-card'
+        type: horizontal-stack
+        width: 256
+      - entity: switch.ogrzewanie_dol
+        hold_action:
+          action: more-info
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: toggle
+        type: entity-button
+      - entity: switch.ogrzewanie_gora_2
+        hold_action:
+          action: more-info
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: toggle
+        type: entity-button
+    icon: 'mdi:radiator'
+    path: ogrzewanie
+    title: Ogrzewanie
+  - badges: []
+    cards:
+      - color_thresholds:
+          - color: '#FFFF00'
+            value: 50
+          - color: '#3498db'
+            value: 0
+        entities:
+          - sensor.0x00158d0002b84b1d_illuminance
+        font_size: 70
+        height: 65
+        hours_to_show: 168
+        line_width: 2
+        points_per_hour: 1
+        show:
+          fill: true
+        type: 'custom:mini-graph-card'
+      - entity: light.salon_kinkiet
+        name: Salon Kinkiet
+        theme: default
+        type: light
+      - color_thresholds:
+          - color: '#e74c3c'
+            value: 28
+          - color: '#1db954'
+            value: 15
+          - color: '#3498db'
+            value: 0
+        entities:
+          - sensor.0x00158d0001fd5adf_temperature
+        font_size: 70
+        height: 65
+        hours_to_show: 168
+        line_width: 2
+        points_per_hour: 1
+        show:
+          fill: true
+        type: 'custom:mini-graph-card'
+      - entity: light.salon_led
+        name: Salon LED
+        type: light
+      - entities:
+          - sensor.0x00158d0001fd5adf_humidity
+        font_size: 70
+        height: 65
+        hours_to_show: 168
+        line_width: 2
+        points_per_hour: 1
+        show:
+          color_thresholds:
+            - color: '#e74c3c'
+              value: 70
+            - color: '#1db954'
+              value: 40
+            - color: '#3498db'
+              value: 0
+          fill: true
+        type: 'custom:mini-graph-card'
+      - entity: light.salon_lampy
+        name: Salon Lampy
+        type: light
+      - entity: climate.termostat_na_dole
+        name: Termostat w salonie
+        type: thermostat
+      - entity: media_player.kitchen_speaker
+        type: media-control
+      - columns: 2
+        entities:
+          - entity: switch.0x00158d00039c00a4_switch
+          - entity: script.turn_tv
+          - entity: script.1570776501587
+        show_state: false
+        type: glance
+      - entities:
+          - entity: binary_sensor.0x00158d00028a1a8a_contact
+          - entity: binary_sensor.0x00158d0002b84b1d_occupancy
+        show_header_toggle: false
+        type: entities
+    icon: 'mdi:sofa'
+    path: salon
+    title: Salon
+  - badges: []
+    cards:
+      - columns: 2
+        entities:
+          - entity: light.sonoff_3ch_toaleta
+          - entity: light.sonoff_3ch_toaleta2
+          - entity: binary_sensor.0x14b457fffe7b8d9c_occupancy
+          - entity: light.sonoff_3ch_toaleta3
+        type: glance
+    icon: 'mdi:toilet'
+    path: toaleta
+    title: Toaleta
+  - badges: []
+    cards:
+      - columns: 2
+        entities:
+          - entity: light.jadalnia_kinkiet
+          - entity: switch.sonoff_100093ebac_1
+          - entity: light.jadalnia_lampa
+          - entity: switch.sonoff_100093ebac_2
+          - entity: binary_sensor.0x00158d0001d54c2f_occupancy
+        type: glance
+    icon: 'mdi:fridge'
+    path: kuchnia
+    title: Kuchnia
+  - badges: []
+    cards:
+      - color_thresholds:
+          - color: '#e74c3c'
+            value: 28
+          - color: '#1db954'
+            value: 15
+          - color: '#3498db'
+            value: 0
+        entities:
+          - sensor.0x00158d00023ef9ed_temperature
+        font_size: 70
+        height: 65
+        hours_to_show: 48
+        line_width: 2
+        points_per_hour: 1
+        show:
+          fill: true
+        type: 'custom:mini-graph-card'
+      - entity: climate.termostat_u_mai
+        type: thermostat
+      - entities:
+          - sensor.0x00158d00023ef9ed_humidity
+        font_size: 70
+        height: 65
+        hours_to_show: 48
+        line_width: 2
+        points_per_hour: 1
+        show:
+          color_thresholds:
+            - color: '#e74c3c'
+              value: 70
+            - color: '#1db954'
+              value: 40
+            - color: '#3498db'
+              value: 0
+          fill: true
+        type: 'custom:mini-graph-card'
+      - entities:
+          - entity: binary_sensor.0x00158d00027b5f6a_contact
+        type: glance
+    path: pokoj-mai
+    title: Pokój Mai
+  - badges: []
+    cards:
+      - color_thresholds:
+          - color: '#e74c3c'
+            value: 28
+          - color: '#1db954'
+            value: 15
+          - color: '#3498db'
+            value: 0
+        entities:
+          - sensor.0x00158d00023ef9b3_temperature
+        font_size: 70
+        height: 65
+        hours_to_show: 48
+        line_width: 2
+        points_per_hour: 1
+        show:
+          fill: true
+        type: 'custom:mini-graph-card'
+      - entity: climate.termostat_w_sypialni
+        name: Termostat w sypialni
+        type: thermostat
+      - entities:
+          - sensor.0x00158d00023ef9b3_humidity
+        font_size: 70
+        height: 65
+        hours_to_show: 48
+        line_width: 2
+        points_per_hour: 1
+        show:
+          color_thresholds:
+            - color: '#e74c3c'
+              value: 60
+            - color: '#1db954'
+              value: 40
+            - color: '#3498db'
+              value: 0
+          fill: true
+        type: 'custom:mini-graph-card'
+      - entities:
+          - entity: binary_sensor.0x00158d00028b5c72_contact
+          - entity: binary_sensor.0x00158d0003f43145_occupancy
+        type: glance
+    path: sypialnia
+    title: Sypialnia
+  - badges: []
+    cards:
+      - color_thresholds:
+          - color: '#e74c3c'
+            value: 28
+          - color: '#1db954'
+            value: 15
+          - color: '#3498db'
+            value: 0
+        entities:
+          - sensor.0x00158d0002461b4f_temperature
+        font_size: 70
+        height: 65
+        hours_to_show: 48
+        line_width: 2
+        points_per_hour: 1
+        show:
+          fill: true
+        type: 'custom:mini-graph-card'
+      - entity: climate.termostat_u_laury
+        name: Termostat u Laury
+        type: thermostat
+      - entities:
+          - sensor.0x00158d0002461b4f_humidity
+        font_size: 70
+        height: 65
+        hours_to_show: 48
+        line_width: 2
+        points_per_hour: 1
+        show:
+          color_thresholds:
+            - color: '#e74c3c'
+              value: 70
+            - color: '#1db954'
+              value: 40
+            - color: '#3498db'
+              value: 0
+          fill: true
+        type: 'custom:mini-graph-card'
+      - entities:
+          - entity: binary_sensor.0x00158d00028a18c7_contact
+        type: glance
+    path: pokoj-laury
+    title: Pokój Laury
+  - badges: []
+    cards:
+      - entities:
+          - entity: sensor.brama_garazowa_ds18b20_temperature
+        hours: 48
+        title: Temperatura w garażu
+        type: 'custom:mini-graph-card'
+      - entity: switch.brama_garazowa
+        hold_action:
+          action: more-info
+        icon: 'mdi:garage-open'
+        icon_height: '-10px'
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: toggle
+        type: entity-button
+      - entity: light.garaz_lampy
+        name: Garaż Lampy
+        type: light
+      - entities:
+          - entity: binary_sensor.0x00158d0002b93fdc_occupancy
+        type: glance
+    icon: 'mdi:garage'
+    path: garaz
+    title: Garaż
+  - badges: []
+    cards:
+      - type: light
+        entity: light.sonoff_lazienka_1
+        name: Łazienka sufit
+      - type: light
+        entity: light.sonoff3_lazienka_3
+        name: Łazienka LED
+      - type: light
+        entity: light.sonoff2_lazienka_2
+        name: Wentylacja
+        icon: 'mdi:fan'
+    icon: 'mdi:shower'
+    path: lazienka
+    title: Łazienka
+  - badges: []
+    cards:
+      - entities:
+          - entity: sensor.hall_status
+          - entity: sensor.jadalnia_kinkiet_status
+          - entity: sensor.salon_kinkiet_status
+          - entity: sensor.salon_lampy_status
+          - entity: sensor.salon_led_status
+          - entity: sensor.sonoff_bridge_1_status
+          - entity: sensor.pomieszczenie_gospodarcze_lampa_status
+          - entity: sensor.garaz_lampy_status
+          - entity: sensor.brama_garazowa_status
+          - entity: sensor.ogrzewanie_dol_status
+          - entity: switch.ogrzewanie_gora_2
+        show_header_toggle: false
+        title: Zasięg WiFi
+        type: entities
+      - entities:
+          - entity: sensor.0x00158d0001d54c2f_linkquality
+          - entity: sensor.0x00158d0001f4d2e4_linkquality
+          - entity: sensor.0x00158d0001fd5adf_linkquality
+          - entity: sensor.0x00158d000200d3b1_linkquality
+          - entity: sensor.0x00158d00023ef9b3_linkquality
+          - entity: sensor.0x00158d00023ef9ed_linkquality
+          - entity: sensor.0x00158d00027b5f6a_linkquality
+          - entity: sensor.0x00158d00028a1a8a_linkquality
+          - entity: sensor.0x00158d00028b5c72_linkquality
+          - entity: sensor.0x00158d0002b5d6a7_linkquality
+          - entity: sensor.0x00158d0002b84b1d_linkquality
+          - entity: sensor.0x00158d0002b93fdc_linkquality
+          - entity: sensor.0x00158d00039c00a4_linkquality
+          - entity: sensor.0x14b457fffe7b8d9c_linkquality
+          - entity: sensor.0x00158d0003929ad1_linkquality
+          - entity: sensor.0x00158d00028a18c7_linkquality
+          - entity: sensor.0x00158d0002461b4f_linkquality
+          - entity: sensor.0x00158d0002395c5e_linkquality
+        show_header_toggle: false
+        title: Zasięg Zigbee
+        type: entities
+      - entities:
+          - sensor.0x00158d0001d54c2f_battery
+          - sensor.0x00158d0001fd5adf_battery
+          - sensor.0x00158d000200d3b1_battery
+          - sensor.0x00158d00023ef9b3_battery
+          - sensor.0x00158d00023ef9ed_battery
+          - sensor.0x00158d00028a1a8a_battery
+          - sensor.0x00158d00027b5f6a_battery
+          - sensor.0x00158d00028b5c72_battery
+          - sensor.0x00158d0002b5d6a7_battery
+          - sensor.0x00158d0002b84b1d_battery
+          - sensor.0x00158d0002b93fdc_battery
+          - sensor.0x14b457fffe7b8d9c_battery
+          - sensor.0x00158d00028a18c7_battery
+          - sensor.0x00158d0002461b4f_battery
+          - sensor.0x00158d0002395c5e_battery
+        show_header_toggle: false
+        title: Poziom baterii
+        type: entities
+      - entities:
+          - entity: device_tracker.google_home
+          - entity: device_tracker.u7lt_2
+          - entity: device_tracker.u7lt
+          - entity: device_tracker.chuangmi_ir_v2_miio66032637
+          - entity: device_tracker.android_4be11db9f9a7d066
+        type: entities
+    icon: 'mdi:wifi'
+    path: stany-urzadzen
+    title: Stany urządzeń
+  - badges: []
+    cards:
+      - entities:
+          - entity: sensor.airly_pressure
+          - entity: sensor.airly_quality
+          - entity: sensor.airly_level
+          - entity: sensor.airly_description
+          - entity: sensor.airly_pm1
+          - entity: sensor.airly_pm10
+          - entity: sensor.airly_pm25
+          - entity: sensor.airly_temperature
+          - entity: sensor.airly_humidity
+        show_header_toggle: false
+        title: Jakość Powietrza
+        type: entities
+      - entities:
+          - entity: sensor.airly_pm1
+          - entity: sensor.airly_pm10
+          - entity: sensor.airly_pm25
+        hours_to_show: 72
+        refresh_interval: 0
+        type: history-graph
+    icon: 'mdi:weather-partly-cloudy'
+    path: stacja-pogodowa
+    title: Stacja Pogodowa
+  - badges: []
+    cards:
+      - entities:
+          - entity: switch.sonoff_10005042d5_1
+          - entity: switch.sonoff_10005042d5_2
+        type: glance
+    path: ogrodek
+    title: Na zewnątrz
+  - badges: []
+    cards:
+      - entities:
+          - entity: sensor.0x00158d0003929ad1_power
+          - entity: sensor.0x00158d00039c00a4_power
+          - entity: sensor.0x00158d0001f4d2e4_power
+        show_header_toggle: false
+        title: Zużycie prądu
+        type: entities
+    icon: 'mdi:flash'
+    path: zuzycie-pradu
+    title: Zużycie prądu
+  - badges: []
+    cards:
+      - entity: climate.termostat_na_dole
+        type: 'custom:thermostat-card'
+    path: test
+    title: TEST
+  - title: Tablet góra
+    path: tablet-gora
+    badges: []
+    cards: []

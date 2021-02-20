@@ -1,0 +1,60 @@
+blueprint:
+  name: Appliance has finished shaking
+  description: Do something when an appliance (like a washing machine or dishwasher)
+    has finished as detected by a vibration sensor.
+  domain: automation
+  input:
+    vibration_sensor:
+      name: Vibration Sensor
+      description: 'Vibration sensor entity (e.g.  Aqara lumi.vibration.aq1
+by LUMI vibration sensor). Needs to have device_class:
+        vibration'
+      selector:
+        entity:
+          domain: binary_sensor
+          device_class: vibration
+    starting_hysteresis:
+      name: Starting hysteresis
+      description: Time duration the sensor has to stay on.
+      default: 5
+      selector:
+        number:
+          min: 1.0
+          max: 60.0
+          unit_of_measurement: min
+          mode: slider
+          step: 1.0
+    finishing_hysteresis:
+      name: Finishing hysteresis
+      description: Time duration the sensor has to stay off.
+      default: 5
+      selector:
+        number:
+          min: 1.0
+          max: 60.0
+          unit_of_measurement: min
+          mode: slider
+          step: 1.0
+    actions:
+      name: Actions
+      description: Actions (e.g. pushing a notification, TTS announcement, ...)
+      selector:
+        action: {}
+trigger:
+- platform: state
+  entity_id: !input 'vibration_sensor'
+  to: 'on'
+  for:
+    minutes: !input 'starting_hysteresis'
+condition: []
+action:
+- wait_for_trigger:
+  - platform: state
+    entity_id: !input 'vibration_sensor'
+    to: 'off'
+    for:
+      minutes: !input 'finishing_hysteresis'
+- choose: []
+  default: !input 'actions'
+mode: single
+max_exceeded: silent
